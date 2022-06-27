@@ -2,15 +2,21 @@
 Console.WriteLine("Ведите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 int revers = 0, n;
-
-while (number > 0)
+if (number > 99)
 {
-    n = number % 10;
-    revers = revers * 10 + n;
-    number = number / 10;
+    while (number > 0)
+    {
+        n = number % 10;
+        revers = revers * 10 + n;
+        number = number / 10;
+    }
+
+    revers = revers % 1000;
+    revers = revers / 100;
+
+    Console.WriteLine("Третья цифра: " + revers);
 }
-
-revers = revers % 1000;
-revers = revers / 100;
-
-Console.WriteLine("Третья цифра: " + revers);
+else
+{
+    Console.WriteLine("Третьей цифры нет");
+}
